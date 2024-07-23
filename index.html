@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título do seu site</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Codificador de Texto</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Codifica Texto</h2>
+            <textarea id="input-text" placeholder="Digite o texto aqui..." rows="5" cols="33"></textarea>
+            <div class="buttons">
+                <button class="buttons__decorate" id="encrypt-btn">Criptografar</button>
+                <button class="buttons__decorate" id="decrypt-btn">Descriptografar</button>
+            </div>
+        </section>
+        <section>    
+            <div class="result" id="result">
+                <p id="result-text"></p>
+                <button class="buttons__decorate" id="copy-btn">Copiar</button>
+            </div>
+            <p id="validation-message" style="color: red;"></p>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Samuel Sander - 2024</p>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
