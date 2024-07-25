@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título do seu site</title>
+    <title>Decodifique seu texto</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body>
-    <header>
-        <h1>Codificador de Texto</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Codifica Texto</h2>
-            <textarea id="input-text" placeholder="Digite o texto aqui..." rows="5" cols="33"></textarea>
-            <div class="buttons">
-                <button class="buttons__decorate" id="encrypt-btn">Criptografar</button>
-                <button class="buttons__decorate" id="decrypt-btn">Descriptografar</button>
+<body >   
+    <h2>Codificador de Texto</h2>
+    <main class="container" >
+        
+        <section class="container__left">
+            <div class="container__left__textArea"> 
+                <textarea  class="container__left__textArea__input" id="input-text" placeholder="Digite o texto aqui..." ></textarea>
             </div>
+            <div class="container__left__buttons">
+                <button class="container__left__buttons__decorate" id="encrypt-btn">Criptografar</button>
+                <button class="container__left__buttons__decorate" id="decrypt-btn">Descriptografar</button>
+            </div>    
         </section>
-        <section>    
-            <div class="result" id="result">
-                <p id="result-text"></p>
-                <button class="buttons__decorate" id="copy-btn">Copiar</button>
+        <section class="container__right">
+            
+            <div class="container__right__result" id="result">
+                <p id="validation-message" style="color: red;"></p>
+                <p class="container__right__text" id="result-text"></p>
+                <button class="container__right__buttons" id="copy-btn">Copiar</button>
             </div>
-            <p id="validation-message" style="color: red;"></p>
+            
         </section>
+        
     </main>
     <footer>
-        <p>Desenvolvido por Samuel Sander - 2024</p>
+        <p>Samuel Sander - 2024</p>
     </footer>
     <script src="./js/script.js"></script>
 </body>
