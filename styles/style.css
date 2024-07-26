@@ -89,7 +89,7 @@ body {
 }
 
 button:hover {
-    background-color: #007bff;
+    background-color: #5d4b85;
     color: white;
 }
 
@@ -131,6 +131,10 @@ button:hover {
     font-size: 24px;
     color: #000000;
 }
+
+    .container__right__result__img {
+        width: 50%;
+    }
 
 footer {
     padding: 3%;
