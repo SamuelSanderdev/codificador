@@ -1,5 +1,7 @@
 # codificador
 
+<p>Este projeto faz parte da primeira parte do curso Iniciante em programação Next One Oracle </p>
+
 <ul> <h1>Tecnologias utilizadas</h1> 
     <li>HTML</li>
     <li>CSS</li>
