@@ -63,6 +63,7 @@ decryptBtn.addEventListener('click', () => {
         showValidationMessage('');
     } else {
         showValidationMessage('Letras maiúsculas e caracteres especiais não são permitidos.');
+        
     }
 });
 
@@ -73,3 +74,12 @@ copyBtn.addEventListener('click', () => {
         copyToClipboard(text);
     }
 });
+
+
+function textClear() {
+    // Se você quiser limpar um campo de entrada de texto
+    document.getElementById('inputTexto').value = '';
+
+    // Se você quiser limpar uma área de exibição de texto
+    document.getElementById('textarea').innerHTML = '';
+};

@@ -16,7 +16,7 @@ h2 {
     color:#dbcafa ;
 }
 
-.cabecalho, footer {
+.header{
     display: flex;
     justify-content: center;
 }
@@ -41,16 +41,16 @@ body {
 
 .container {
     display: flex;
-    flex: 1;
-    width: 100%;
     background-color:var(--ct-secondary);   
     justify-content:space-between;
     align-items: center;
     
 }
 .container__left {
+    display: flex;
     width: 60%;
-    flex-direction: column;    
+    flex-direction: column;   
+    justify-content: space-between;
 }
 
 .container__left__textArea__input{ 
@@ -70,10 +70,17 @@ body {
     font-size: 1.5rem;
 }
 
+.container__left__validation {
+    display: flex;
+    margin-left: 4.5%;
+    margin-bottom: 0.5%;
+
+}
+
 .container__left__buttons {
     display: flex;
     width: 680px;
-    margin-top: 25%;
+    margin-top: 0;
     margin-bottom: 2%;
     margin-left: 3%;
     gap: 30px;
@@ -137,5 +144,16 @@ button:hover {
     }
 
 footer {
-    padding: 3%;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+
+@media (max-width: 1268px) {
+    .container{
+        flex-wrap: wrap;
+        justify-content: center
+    }
+
 }
