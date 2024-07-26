@@ -47,7 +47,7 @@ body {
     
 }
 .container__left {
-    display: flex;
+    display: flex ;
     width: 60%;
     flex-direction: column;   
     justify-content: space-between;
