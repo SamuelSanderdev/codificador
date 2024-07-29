@@ -6,6 +6,7 @@ const decryptBtn = document.getElementById('decrypt-btn');
 const copyBtn = document.getElementById('copy-btn');
 const validationMessage = document.getElementById('validation-message');
 
+
 // Função para criptografar o texto
 function encryptText(text) {
     return text.replace(/e/g, 'enter')
@@ -42,6 +43,18 @@ function copyToClipboard(text) {
     });
 }
 
+const message_alert = 'Letras maiúsculas e caracteres especiais não são permitidos.';
+const urlImage = './assets/Vector2.png'
+
+// Função para mostrar mensagem de validação
+function showValidationMessage(message) {
+    // Certifique-se de que há um elemento com este ID no seu HTML
+    if (message) {
+        validationMessage.innerHTML = `<img src="${urlImage}" alt="Alerta"> ${message_alert}`;
+    } else {
+        validationMessage.innerHTML = '';
+    }
+}
 // Adiciona evento de clique para criptografar
 encryptBtn.addEventListener('click', () => {
     const text = inputText.value;
@@ -50,7 +63,7 @@ encryptBtn.addEventListener('click', () => {
         resultText.textContent = encryptedText;
         showValidationMessage('');
     } else {
-        showValidationMessage('Letras maiúsculas e caracteres especiais não são permitidos.');
+        showValidationMessage(message_alert);
     }
 });
 
@@ -62,7 +75,7 @@ decryptBtn.addEventListener('click', () => {
         resultText.textContent = decryptedText;
         showValidationMessage('');
     } else {
-        showValidationMessage('Letras maiúsculas e caracteres especiais não são permitidos.');
+        showValidationMessage(message_alert);
         
     }
 });
@@ -76,10 +89,39 @@ copyBtn.addEventListener('click', () => {
 });
 
 
-function textClear() {
-    // Se você quiser limpar um campo de entrada de texto
-    document.getElementById('inputTexto').value = '';
 
-    // Se você quiser limpar uma área de exibição de texto
-    document.getElementById('textarea').innerHTML = '';
-};
+function updateResultText() {
+    const inputText = document.getElementById('input-text').value;
+    const resultText = document.getElementById('result-text');
+    const imageContainerRight = document.getElementById('image-container-right');
+
+    // Simulação de criptografia/descriptografia
+    resultText.textContent = inputText; 
+
+    // Verifica se o resultText está vazio e altera a visibilidade da imagem
+    if (resultText.textContent.trim() === '') {
+        imageContainerRight.classList.remove('hidden');
+    } else {
+        imageContainerRight.classList.add('hidden');
+    }
+}
+
+
+
+function clearText() {
+    const resultText = document.getElementById('result-text');
+    resultText.innerText = '';
+    updateText(''); // Chama a função updateText para garantir que a imagem seja exibida
+}
+
+// Event listener para o botão de limpar
+document.getElementById('clear-btn').addEventListener('click', clearText);
+
+function reloadPage() {
+    location.reload();
+}
+
+document.getElementById('reload-btn').addEventListener('click', reloadPage);
+
+// Chama a função quando a página é carregada
+window.onload = checkTextAndToggleImage;
