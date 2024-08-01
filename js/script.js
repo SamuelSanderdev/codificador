@@ -16,6 +16,7 @@ function encryptText(text) {
                .replace(/u/g, 'ufat');
 }
 
+
 // Função para descriptografar o texto
 function decryptText(text) {
     return text.replace(/enter/g, 'e')
@@ -90,21 +91,46 @@ copyBtn.addEventListener('click', () => {
 
 
 
+// Função para verificar o conteúdo do textarea e atualizar a visibilidade dos elementos
 function updateResultText() {
-    const inputText = document.getElementById('input-text').value;
-    const resultText = document.getElementById('result-text');
-    const imageContainerRight = document.getElementById('image-container-right');
+    const inputText = document.getElementById("input-text").value;
+    const copyButton = document.getElementById("copy-btn");
+    const imageContainerRight = document.getElementById("image-container-right");
+    const infContainerRight = document.getElementById("nothing-message");
+    const textPreference = document.getElementById("text-preference");
 
-    // Simulação de criptografia/descriptografia
-    resultText.textContent = inputText; 
-
-    // Verifica se o resultText está vazio e altera a visibilidade da imagem
-    if (resultText.textContent.trim() === '') {
-        imageContainerRight.classList.remove('hidden');
+    if (inputText.trim() !== "") {
+        // Se o texto não estiver vazio
+        copyButton.style.display = "block";
+        imageContainerRight.style.display = "none";
+        infContainerRight.style.display = "none";
+        textPreference.style.display = "none"
     } else {
-        imageContainerRight.classList.add('hidden');
+        // Se o texto estiver vazio
+        copyButton.style.display = "none";
+        imageContainerRight.style.display = "block";
+        infContainerRight.style.display = "block";
+        textPreference.style.display = "block"
     }
 }
+
+// Função para recarregar a página
+function reloadPage() {
+    location.reload();
+}
+
+// Chamar updateResultText quando a página carrega para definir estados iniciais
+document.addEventListener("DOMContentLoaded", function() {
+    updateResultText();
+});
+
+
+// Função para recarregar a página
+function reloadPage() {
+    location.reload();
+}
+
+
 
 
 
