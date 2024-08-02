@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;    
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 :root {
@@ -220,32 +221,40 @@ footer  {
 
 @media (max-width: 768px){
     .container {
-        flex-wrap:wrap;
-        padding: 40px;
+        flex-direction: column;
+       
     }
+    
     .container__left{
-        width: 50%;
+        width:100%;
     }
 
     .container__left__buttons{
-        padding: 0%;
-        margin-right: 40px;
+        gap: 10px;
+        padding: 24px;
         align-items: center;
     }
+
     .container__left__textArea {
-        padding: 40px;
+        margin-left: 150px;
+
     }
+
     .container__left__textArea__input {
+        width: 70%;
         margin-bottom: 0;
+ 
     }
 
     .container__right {
-        width: 50%;
+       width: 50%;
     }
+
     .container__right__result{
-        justify-content: space-between;
+       width: auto;
         height: auto;
     }
+
     .container__right__result__img {
         width: 50%;
     }
@@ -256,36 +265,46 @@ footer  {
 
     .container {
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
     .container__left{     
-        width: 50%;   
         align-items: center;
+        justify-content: center;
     }
+
     .container__left__textArea {
         padding: 0;
-        width: auto;
     }
+
     .container__left__textArea__input {
         width: auto;
         margin-bottom: 0;
     }
+
     .container__left__buttons{
         flex-flow: inherit;
         gap: 24px;
         margin: 0;
         padding: 0%;
         margin-top: 10%;
+        margin-left: 150px;
     }
+
     .container__right {
-        width: 50%;
+        justify-content: center;
+        padding: 20px;
     }
+
     .container__right__result{
        width: 328px;
     }
+
     .container__right__result__img {
         width: 0%;
     }
+
     .footer__link {
         flex-direction: column;
     }

@@ -114,10 +114,7 @@ function updateResultText() {
     }
 }
 
-// Função para recarregar a página
-function reloadPage() {
-    location.reload();
-}
+
 
 // Chamar updateResultText quando a página carrega para definir estados iniciais
 document.addEventListener("DOMContentLoaded", function() {
