@@ -3,6 +3,14 @@
 #
 ### <p>Este documento fornece uma explicação detalhada do código JavaScript utilizado para criptografar e descriptografar texto em uma página web. O código também inclui funcionalidades de validação de entrada, cópia de texto para a área de transferência, e atualização de elementos da interface do usuário com base no conteúdo do texto.</p>
 
+# O codificador Responsivo
+
+<img src='./assets/codificador-full.png' alt='imagem full codificador'>
+
+<img src='./assets/codificador-parte-1-768px.png' alt='codificador parte 1 768px'>
+<img src='./assets/codificador-parte-2-768px.png' alt='codificador parte 2 768px'>
+
+<img src='./assets/codificador-375px.png' alt='codificador mobile 375px'>
 
 ## Índice
 
