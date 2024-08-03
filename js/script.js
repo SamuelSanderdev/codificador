@@ -1,4 +1,3 @@
-// Seleciona os elementos do DOM
 const inputText = document.getElementById('input-text');
 const resultText = document.getElementById('result-text');
 const encryptBtn = document.getElementById('encrypt-btn');
@@ -7,7 +6,6 @@ const copyBtn = document.getElementById('copy-btn');
 const validationMessage = document.getElementById('validation-message');
 
 
-// Função para criptografar o texto
 function encryptText(text) {
     return text.replace(/e/g, 'enter')
                .replace(/i/g, 'imes')
@@ -17,7 +15,6 @@ function encryptText(text) {
 }
 
 
-// Função para descriptografar o texto
 function decryptText(text) {
     return text.replace(/enter/g, 'e')
                .replace(/imes/g, 'i')
@@ -26,18 +23,15 @@ function decryptText(text) {
                .replace(/ufat/g, 'u');
 }
 
-// Função para validar o texto
 function isValidText(text) {
     const regex = /^[a-z\s]+$/;
     return regex.test(text);
 }
 
-// Função para exibir a mensagem de validação
 function showValidationMessage(message) {
     validationMessage.textContent = message;
 }
 
-// Função para copiar o texto para a área de transferência
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         alert('Texto copiado!');
@@ -47,16 +41,15 @@ function copyToClipboard(text) {
 const message_alert = 'Letras maiúsculas e caracteres especiais não são permitidos.';
 const urlImage = './assets/Vector2.png'
 
-// Função para mostrar mensagem de validação
+
 function showValidationMessage(message) {
-    // Certifique-se de que há um elemento com este ID no seu HTML
+    
     if (message) {
         validationMessage.innerHTML = `<img src="${urlImage}" alt="Alerta"> ${message_alert}`;
     } else {
         validationMessage.innerHTML = '';
     }
 }
-// Adiciona evento de clique para criptografar
 encryptBtn.addEventListener('click', () => {
     const text = inputText.value;
     if (isValidText(text)) {
@@ -68,7 +61,6 @@ encryptBtn.addEventListener('click', () => {
     }
 });
 
-// Adiciona evento de clique para descriptografar
 decryptBtn.addEventListener('click', () => {
     const text = inputText.value;
     if (isValidText(text)) {
@@ -81,7 +73,6 @@ decryptBtn.addEventListener('click', () => {
     }
 });
 
-// Adiciona evento de clique para copiar o texto
 copyBtn.addEventListener('click', () => {
     const text = resultText.textContent;
     if (text) {
@@ -90,8 +81,6 @@ copyBtn.addEventListener('click', () => {
 });
 
 
-
-// Função para verificar o conteúdo do textarea e atualizar a visibilidade dos elementos
 function updateResultText() {
     const inputText = document.getElementById("input-text").value;
     const copyButton = document.getElementById("copy-btn");
@@ -100,13 +89,11 @@ function updateResultText() {
     const textPreference = document.getElementById("text-preference");
 
     if (inputText.trim() !== "") {
-        // Se o texto não estiver vazio
         copyButton.style.display = "block";
         imageContainerRight.style.display = "none";
         infContainerRight.style.display = "none";
         textPreference.style.display = "none"
     } else {
-        // Se o texto estiver vazio
         copyButton.style.display = "none";
         imageContainerRight.style.display = "block";
         infContainerRight.style.display = "block";
@@ -114,15 +101,11 @@ function updateResultText() {
     }
 }
 
-
-
-// Chamar updateResultText quando a página carrega para definir estados iniciais
 document.addEventListener("DOMContentLoaded", function() {
     updateResultText();
 });
 
 
-// Função para recarregar a página
 function reloadPage() {
     location.reload();
 }
@@ -134,10 +117,9 @@ function reloadPage() {
 function clearText() {
     const resultText = document.getElementById('result-text');
     resultText.innerText = '';
-    updateText(''); // Chama a função updateText para garantir que a imagem seja exibida
+    updateText('');
 }
 
-// Event listener para o botão de limpar
 document.getElementById('clear-btn').addEventListener('click', clearText);
 
 function reloadPage() {
@@ -146,5 +128,5 @@ function reloadPage() {
 
 document.getElementById('reload-btn').addEventListener('click', reloadPage);
 
-// Chama a função quando a página é carregada
+
 window.onload = checkTextAndToggleImage;
